@@ -1,0 +1,134 @@
+:root {
+  /* color palette */
+  --white: #ffffff;
+  --black: #080808;
+  --red: #ff0000;
+  --green: #008000;
+  --gray: #808080;
+  --light-gray: #d6d6d6;
+  --purple: #800080;
+  --pink: #ffc0cb;
+  --brown: #a52a2a;
+  --light-blue: #b4d0e7;
+  --blue: #2e2ec1;
+  --sky-light-blue: #52a6e7;
+  --pastel-green: #a2d39b;
+  --pastel-green-secondary: #c7f6c1;
+  --aubergine: #61082b;
+  --sky-blue: #0093ce;
+  --bright-red: #ff1c1c;
+  --darker-red: #c80606;
+  --lighter-blue: #288ff6;
+  --dark-blue: #1a1a8a;
+  --yellow: #eeba72;
+  --light-purple: #9792e4;
+}
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  float: left;
+  width: 700px;
+  height: 300px;
+  position: relative;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item .text {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  text-align: right;
+  color: white;
+}
+
+.thumbs {
+  float: left;
+  height: 300px;
+  background: #000;
+  position: relative;
+}
+
+.thumb {
+  height: calc((300px) / 5);
+  opacity: 0.5;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb.active {
+  border: 2px solid #ccc;
+  opacity: 1;
+}
+
+.prev,
+.next {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+  border-radius: 50%;
+  background: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  z-index: 999;
+}
+
+.next {
+  bottom: 0;
+}
+
+/*
+EXTRA: in questo esempio gli accordion vengono creati
+usando 2 bordi di un quadratino ruotato di 45 gradi
+In una versione base si possono usare delle icone
+oppure i caratteri ∧ (&and;) e ∨ (&or;)
+*/
+.prev::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.next::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: block;
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translate(-50%) rotate(135deg);
+}
