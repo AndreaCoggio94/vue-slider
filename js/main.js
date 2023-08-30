@@ -35,10 +35,18 @@ createApp({
   },
   methods: {
     goNext() {
-      this.activeIndex++;
+      if (this.activeIndex < this.slides.length - 1) {
+        this.activeIndex++;
+      } else {
+        this.activeIndex = 0;
+      }
     },
     goPrev() {
-      this.activeIndex--;
+      if (this.activeIndex > 0) {
+        this.activeIndex--;
+      } else {
+        this.activeIndex = this.slides.length - 1;
+      }
     },
   },
 }).mount("#app");
