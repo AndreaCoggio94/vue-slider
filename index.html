@@ -7,7 +7,7 @@
     <meta name="author" content="Andrea Coggio" />
     <meta name="description" content="new exercise" />
     <!-- title -->
-    <title>New Document</title>
+    <title>Vue SLider</title>
     <!-- font awesome -->
     <link
       rel="stylesheet"
@@ -54,7 +54,13 @@
           <div class="thumbs">
             <div @click="goPrev()" class="prev"></div>
             <div @click="goNext()" class="next"></div>
-            <div class="thumb active">
+            <div v-for="img in slides">
+              <div class="thumb">
+                <img :src="img.image" :alt="img.title" />
+              </div>
+            </div>
+
+            <!-- <div class="thumb active">
               <img src="img/01.webp" alt="Svezia" />
             </div>
             <div class="thumb">
@@ -68,7 +74,7 @@
             </div>
             <div class="thumb">
               <img src="img/05.webp" alt="Avengers" />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
