@@ -55,10 +55,14 @@
             <div @click="goPrev()" class="prev"></div>
             <div @click="goNext()" class="next"></div>
             <div v-for="(img, index) in slides">
-              <div v-if="index == activeIndex" class="thumb active">
+              <div
+                v-if="index == activeIndex"
+                class="thumb active"
+                @click="goTo(index)"
+              >
                 <img :src="img.image" :alt="img.title" />
               </div>
-              <div v-else class="thumb">
+              <div v-else class="thumb" @click="goTo(index)">
                 <img :src="img.image" :alt="img.title" />
               </div>
             </div>

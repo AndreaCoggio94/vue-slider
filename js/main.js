@@ -48,5 +48,8 @@ createApp({
         this.activeIndex = this.slides.length - 1;
       }
     },
+    goTo(index) {
+      this.activeIndex = index;
+    },
   },
 }).mount("#app");
