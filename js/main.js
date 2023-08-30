@@ -1,5 +1,3 @@
-console.log("Hello world");
-
 const { createApp } = Vue;
 
 createApp({
@@ -35,4 +33,5 @@ createApp({
       activeIndex: "0",
     };
   },
+  methods: {},
 }).mount("#app");
