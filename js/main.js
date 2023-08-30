@@ -31,6 +31,7 @@ createApp({
         },
       ],
       activeIndex: "0",
+      autoPlay: null,
     };
   },
   methods: {
@@ -51,5 +52,14 @@ createApp({
     goTo(index) {
       this.activeIndex = index;
     },
+    start() {
+      this.autoPlay = setInterval(this.goNext, 3000);
+    },
+    stop() {
+      clearInterval(this.autoPlay);
+    },
+  },
+  created() {
+    this.start();
   },
 }).mount("#app");
