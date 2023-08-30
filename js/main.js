@@ -33,5 +33,12 @@ createApp({
       activeIndex: "0",
     };
   },
-  methods: {},
+  methods: {
+    goNext() {
+      this.activeIndex++;
+    },
+    goPrev() {
+      this.activeIndex--;
+    },
+  },
 }).mount("#app");
